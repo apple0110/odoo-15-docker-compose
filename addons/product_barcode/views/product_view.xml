@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (C) 2016-Today: GRAP (http://www.grap.coop)
+Copyright (C) 2016-Today GRAP (http://www.lalouve.net)
+@author Sylvain LE GAL (https://twitter.com/legalsylvain)
+License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+-->
+<odoo>
+    <record id="view_product_product_form_gen_b" model="ir.ui.view">
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view" />
+        <field name="arch" type="xml">
+            <field name="barcode" position="after">
+                <button
+                    name="generate_barcode"
+                    type="object"
+                    string="Generate Barcode"
+                    attrs="{'invisible': [('barcode', '=', True)]}"
+                    colspan="2"
+                />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_product_template_form_gen_b" model="ir.ui.view">
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view" />
+        <field name="arch" type="xml">
+            <field name="barcode" position="after">
+                <button
+                    name="generate_barcode"
+                    type="object"
+                    string="Generate Barcode"
+                    attrs="{'invisible': [('barcode', '=', True)]}"
+                    colspan="2"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>
